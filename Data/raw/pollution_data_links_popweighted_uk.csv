@@ -1,0 +1,8 @@
+Pollutant,Year,Areal Unit,Download link (CSV)
+PM2.5,2010,Local Authority,http://uk-air.defra.gov.uk/datastore/pcm/popwmpm252010byUKlocalauthority.csv
+PM2.5,2011,Local Authority,http://uk-air.defra.gov.uk/datastore/pcm/popwmpm252011byUKlocalauthority.csv
+PM2.5,2011,Region,http://uk-air.defra.gov.uk/datastore/pcm/popwmpm252011byEnglandregionanduppertierlocalauthority.csv
+PM2.5,2011,Country,http://uk-air.defra.gov.uk/datastore/pcm/popwmpm252011byUKcountry.csv
+PM2.5,2012,Local Authority,http://uk-air.defra.gov.uk/datastore/pcm/popwmpm252012byUKlocalauthority.csv
+PM2.5,2012,Region,http://uk-air.defra.gov.uk/datastore/pcm/popwmpm252012byEnglandregionanduppertierlocalauthority.csv
+PM2.5,2012,Country,http://uk-air.defra.gov.uk/datastore/pcm/popwmpm252012byUKcountry.csv

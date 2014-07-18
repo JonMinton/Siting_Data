@@ -1,0 +1,97 @@
+Group,Pollutant,Year,Metric,Header Label,Comments,Link
+Main,PM10,2001,Annual mean,pm102001,TEOM units,http://uk-air.defra.gov.uk/datastore/pcm/mappm102001.csv
+Main,PM10,2002,Annual mean,pm102002,TEOM units,http://uk-air.defra.gov.uk/datastore/pcm/mappm102002.csv
+Main,PM10,2003,Annual mean,pm102003s15a,TEOM units,http://uk-air.defra.gov.uk/datastore/pcm/mappm102003s15a.csv
+Main,PM10,2004,Annual mean,pm102004g,Gravimetric units,http://uk-air.defra.gov.uk/datastore/pcm/mappm102004g.csv
+Main,PM10,2005,Annual mean,pm1005ac,Gravimetric units – corrected to account for updated Partisol monitoring concentrations1,http://uk-air.defra.gov.uk/datastore/pcm/mappm1005ac.csv
+Main,PM10,2006,Annual mean,pm102006gh,Gravimetric units – corrected to account for updated Partisol monitoring concentrations1,http://uk-air.defra.gov.uk/datastore/pcm/mappm102006gh.csv
+Main,PM10,2007,Annual mean,pm102007g,Gravimetric units,http://uk-air.defra.gov.uk/datastore/pcm/mappm102007g.csv
+Main,PM10,2008,Annual mean,pm102008g,Gravimetric units,http://uk-air.defra.gov.uk/datastore/pcm/mappm102008g.csv
+Main,PM10,2009,Annual mean,pm102009g,Gravimetric units,http://uk-air.defra.gov.uk/datastore/pcm/mappm102009g.csv
+Main,PM10,2010,Annual mean,pm102010g,Gravimetric units,http://uk-air.defra.gov.uk/datastore/pcm/mappm102010g.csv
+Main,PM10,2011,Annual mean,pm102011g,Gravimetric units,http://uk-air.defra.gov.uk/datastore/pcm/mappm102011g.csv
+Main,PM10,2012,Annual mean,pm102012g,Gravimetric units,http://uk-air.defra.gov.uk/datastore/pcm/mappm102012g.csv
+Main,PM2.5,2002,Annual mean,pm252002,,http://uk-air.defra.gov.uk/datastore/pcm/mappm252002.csv
+Main,PM2.5,2003,Annual mean,pm252003grav,,http://uk-air.defra.gov.uk/datastore/pcm/mappm252003grav.csv
+Main,PM2.5,2004,Annual mean,pm252004g,,http://uk-air.defra.gov.uk/datastore/pcm/mappm252004g.csv
+Main,PM2.5,2005,Annual mean,pm2505ac,corrected to account for updated Partisol monitoring concentrations1,http://uk-air.defra.gov.uk/datastore/pcm/mappm2505ac.csv
+Main,PM2.5,2006,Annual mean,pm252006gh,corrected to account for updated Partisol monitoring concentrations1,http://uk-air.defra.gov.uk/datastore/pcm/mappm252006gh.csv
+Main,PM2.5,2007,Annual mean,pm252007g,,http://uk-air.defra.gov.uk/datastore/pcm/mappm252007g.csv
+Main,PM2.5,2008,Annual mean,pm252008g,,http://uk-air.defra.gov.uk/datastore/pcm/mappm252008g.csv
+Main,PM2.5,2009,Annual mean,pm252009g,,http://uk-air.defra.gov.uk/datastore/pcm/mappm252009g.csv
+Main,PM2.5,2010,Annual mean,pm252010g,,http://uk-air.defra.gov.uk/datastore/pcm/mappm252010g.csv
+Main,PM2.5,2011,Annual mean,pm252011g,,http://uk-air.defra.gov.uk/datastore/pcm/mappm252011g.csv
+Main,PM2.5,2012,Annual mean,pm252012g,,http://uk-air.defra.gov.uk/datastore/pcm/mappm252012g.csv
+Main,NO2,2001,Annual mean,no22001_3,,http://uk-air.defra.gov.uk/datastore/pcm/mapno22001_3.csv
+Main,NO2,2002,Annual mean,no22002_1,,http://uk-air.defra.gov.uk/datastore/pcm/mapno22002_1.csv
+Main,NO2,2003,Annual mean,no22003,,http://uk-air.defra.gov.uk/datastore/pcm/mapno22003.csv
+Main,NO2,2004,Annual mean,no22004,,http://uk-air.defra.gov.uk/datastore/pcm/mapno22004.csv
+Main,NO2,2005,Annual mean,no22005,,http://uk-air.defra.gov.uk/datastore/pcm/mapno22005.csv
+Main,NO2,2006,Annual mean,no22006,,http://uk-air.defra.gov.uk/datastore/pcm/mapno22006.csv
+Main,NO2,2007,Annual mean,no22007,,http://uk-air.defra.gov.uk/datastore/pcm/mapno22007.csv
+Main,NO2,2008,Annual mean,no22008,,http://uk-air.defra.gov.uk/datastore/pcm/mapno22008.csv
+Main,NO2,2009,Annual mean,no22009,,http://uk-air.defra.gov.uk/datastore/pcm/mapno22009.csv
+Main,NO2,2010,Annual mean,no22010,,http://uk-air.defra.gov.uk/datastore/pcm/mapno22010.csv
+Main,NO2,2011,Annual mean,no22011,,http://uk-air.defra.gov.uk/datastore/pcm/mapno22011.csv
+Main,NO2,2012,Annual mean,no22012,,http://uk-air.defra.gov.uk/datastore/pcm/mapno22012.csv
+Main,NOX,2001,Annual mean,nox2001_3,µg m-3 (NOX as NO2),http://uk-air.defra.gov.uk/datastore/pcm/mapnox2001_3.csv
+Main,NOX,2002,Annual mean,nox2002_1,µg m-3 (NOX as NO2),http://uk-air.defra.gov.uk/datastore/pcm/mapnox2002_1.csv
+Main,NOX,2003,Annual mean,nox2003,µg m-3 (NOX as NO2),http://uk-air.defra.gov.uk/datastore/pcm/mapnox2003.csv
+Main,NOX,2004,Annual mean,nox2004,µg m-3 (NOX as NO2),http://uk-air.defra.gov.uk/datastore/pcm/mapnox2004.csv
+Main,NOX,2005,Annual mean,nox2005,µg m-3 (NOX as NO2),http://uk-air.defra.gov.uk/datastore/pcm/mapnox2005.csv
+Main,NOX,2006,Annual mean,nox2006,µg m-3 (NOX as NO2),http://uk-air.defra.gov.uk/datastore/pcm/mapnox2006.csv
+Main,NOX,2007,Annual mean,nox2007,µg m-3 (NOX as NO2),http://uk-air.defra.gov.uk/datastore/pcm/mapnox2007.csv
+Main,NOX,2008,Annual mean,nox2008,µg m-3 (NOX as NO2),http://uk-air.defra.gov.uk/datastore/pcm/mapnox2008.csv
+Main,NOX,2009,Annual mean,nox2009,µg m-3 (NOX as NO2),http://uk-air.defra.gov.uk/datastore/pcm/mapnox2009.csv
+Main,NOX,2010,Annual mean,nox2010,µg m-3 (NOX as NO2),http://uk-air.defra.gov.uk/datastore/pcm/mapnox2010.csv
+Main,NOX,2011,Annual mean,nox2011,µg m-3 (NOX as NO2),http://uk-air.defra.gov.uk/datastore/pcm/mapnox2011.csv
+Main,NOX,2012,Annual mean,nox2012,µg m-3 (NOX as NO2),http://uk-air.defra.gov.uk/datastore/pcm/mapnox2012.csv
+Main,CO,2002,Annual mean,coamean2002_1,Units are mg m-3,http://uk-air.defra.gov.uk/datastore/pcm/mapcoamean2002_1.csv
+Main,CO,2003,Annual mean,coamean2003_1,Units are mg m-3,http://uk-air.defra.gov.uk/datastore/pcm/mapcoamean2003_1.csv
+Main,CO,2004,Annual mean,coamean2004_1,Units are mg m-3,http://uk-air.defra.gov.uk/datastore/pcm/mapcoamean2004_1.csv
+Main,CO,2005,Annual mean,coamean2005,Units are mg m-3,http://uk-air.defra.gov.uk/datastore/pcm/mapcoamean2005.csv
+Main,CO,2006,Annual mean,coamean2006,Units are mg m-3,http://uk-air.defra.gov.uk/datastore/pcm/mapcoamean2006.csv
+Main,CO,2007,Annual mean,coamean2007,Units are mg m-3,http://uk-air.defra.gov.uk/datastore/pcm/mapcoamean2007.csv
+Main,CO,2008,Annual mean,coamean2008,Units are mg m-3,http://uk-air.defra.gov.uk/datastore/pcm/mapcoamean2008.csv
+Main,CO,2009,Annual mean,coamean2009,Units are mg m-3,http://uk-air.defra.gov.uk/datastore/pcm/mapcoamean2009.csv
+Main,CO,2010,Annual mean,coamean2010,Units are mg m-3,http://uk-air.defra.gov.uk/datastore/pcm/mapcoamean2010.csv
+Main,CO,2002,Max 8-hr mean,co8hr2002_1,Units are mg m-3,http://uk-air.defra.gov.uk/datastore/pcm/mapco8hr2002_1.csv
+Main,CO,2003,Max 8-hr mean,co8hr2003_1,Units are mg m-3,http://uk-air.defra.gov.uk/datastore/pcm/mapco8hr2003_1.csv
+Main,CO,2004,Max 8-hr mean,com8hr2004_1,Units are mg m-3,http://uk-air.defra.gov.uk/datastore/pcm/mapcom8hr2004_1.csv
+Main,CO,2005,Max 8-hr mean,com8hr2005,Units are mg m-3,http://uk-air.defra.gov.uk/datastore/pcm/mapcom8hr2005.csv
+Main,CO,2006,Max 8-hr mean,com8hr2006,Units are mg m-3,http://uk-air.defra.gov.uk/data/mapcom8hr2006
+Main,CO,2007,Max 8-hr mean,com8hr2007,Units are mg m-3,http://uk-air.defra.gov.uk/datastore/pcm/mapcom8hr2007.csv
+Main,CO,2008,Max 8-hr mean,com8hr2008,Units are mg m-3,http://uk-air.defra.gov.uk/datastore/pcm/mapcom8hr2008.csv
+Main,CO,2009,Max 8-hr mean,com8hr2009,Units are mg m-3,http://uk-air.defra.gov.uk/datastore/pcm/mapcom8hr2009.csv
+Main,CO,2010,Max 8-hr mean,com8hr2010,Units are mg m-3,http://uk-air.defra.gov.uk/datastore/pcm/mapcom8hr2010.csv
+Main,SO2,2002,Annual mean,so202annd,,http://uk-air.defra.gov.uk/datastore/pcm/mapso202annd.csv
+Main,SO2,2003,Annual mean,so203ann,,http://uk-air.defra.gov.uk/datastore/pcm/mapso203ann.csv
+Main,SO2,2004,Annual mean,so204ann,,http://uk-air.defra.gov.uk/datastore/pcm/mapso204ann.csv
+Main,SO2,2005,Annual mean,so205ann,,http://uk-air.defra.gov.uk/datastore/pcm/mapso205ann.csv
+Main,SO2,2006,Annual mean,so206ann,,http://uk-air.defra.gov.uk/datastore/pcm/mapso206ann.csv
+Main,SO2,2007,Annual mean,so207ann,,http://uk-air.defra.gov.uk/datastore/pcm/mapso207ann.csv
+Main,SO2,2008,Annual mean,so208ann,,http://uk-air.defra.gov.uk/datastore/pcm/mapso208ann.csv
+Main,SO2,2009,Annual mean,so209ann,,http://uk-air.defra.gov.uk/datastore/pcm/mapso209ann.csv
+Main,SO2,2010,Annual mean,so210ann,,http://uk-air.defra.gov.uk/datastore/pcm/mapso210ann.csv
+Main,SO2,2011,Annual mean,so211ann,,http://uk-air.defra.gov.uk/datastore/pcm/mapso211ann.csv
+Main,SO2,2012,Annual mean,so212ann,,http://uk-air.defra.gov.uk/datastore/pcm/mapso212ann.csv
+Main,Ozone,2003,DGT120,daysgt12003_2,metric is number of days on which the daily max 8-hr concentration is greater than 120 µg m-3,http://uk-air.defra.gov.uk/datastore/pcm/mapdaysgt12003_2.csv
+Main,Ozone,2004,DGT120,dgt12004,metric is number of days on which the daily max 8-hr concentration is greater than 120 µg m-3,http://uk-air.defra.gov.uk/datastore/pcm/mapdgt12004.csv
+Main,Ozone,2005,DGT120,dgt120_2005r,metric is number of days on which the daily max 8-hr concentration is greater than 120 µg m-3,http://uk-air.defra.gov.uk/datastore/pcm/mapdgt120_2005r.csv
+Main,Ozone,2006,DGT120,dgt120_06,metric is number of days on which the daily max 8-hr concentration is greater than 120 µg m-3,http://uk-air.defra.gov.uk/datastore/pcm/mapdgt120_06.csv
+Main,Ozone,2007,DGT120,dgt120_07,metric is number of days on which the daily max 8-hr concentration is greater than 120 µg m-3,http://uk-air.defra.gov.uk/datastore/pcm/mapdgt120_07.csv
+Main,Ozone,2008,DGT120,dgt120_08,metric is number of days on which the daily max 8-hr concentration is greater than 120 µg m-3,http://uk-air.defra.gov.uk/datastore/pcm/mapdgt120_08.csv
+Main,Ozone,2009,DGT120,dgt120_09,metric is number of days on which the daily max 8-hr concentration is greater than 120 µg m-3,http://uk-air.defra.gov.uk/datastore/pcm/mapdgt120_09.csv
+Main,Ozone,2010,DGT120,dgt120_10,metric is number of days on which the daily max 8-hr concentration is greater than 120 µg m-3,http://uk-air.defra.gov.uk/datastore/pcm/mapdgt120_10.csv
+Main,Ozone,2011,DGT120,dgt120_11,metric is number of days on which the daily max 8-hr concentration is greater than 120 µg m-3,http://uk-air.defra.gov.uk/datastore/pcm/mapdgt120_11.csv
+Main,Ozone,2012,DGT120,dgt120_11,metric is number of days on which the daily max 8-hr concentration is greater than 120 µg m-3,http://uk-air.defra.gov.uk/datastore/pcm/mapdgt120_12.csv
+Main,Benzene,2003,Annual mean,bz2003,,http://uk-air.defra.gov.uk/datastore/pcm/mapbz2003.csv
+Main,Benzene,2004,Annual mean,bz2004,,http://uk-air.defra.gov.uk/datastore/pcm/mapbz2004.csv
+Main,Benzene,2005,Annual mean,bz2005,,http://uk-air.defra.gov.uk/datastore/pcm/mapbz2005.csv
+Main,Benzene,2006,Annual mean,bz2006,,http://uk-air.defra.gov.uk/datastore/pcm/mapbz2006.csv
+Main,Benzene,2007,Annual mean,bz2007,,http://uk-air.defra.gov.uk/datastore/pcm/mapbz2007.csv
+Main,Benzene,2008,Annual mean,bz2008,,http://uk-air.defra.gov.uk/datastore/pcm/mapbz2008.csv
+Main,Benzene,2009,Annual mean,bz2009,,http://uk-air.defra.gov.uk/datastore/pcm/mapbz2009.csv
+Main,Benzene,2010,Annual mean,bz2010,,http://uk-air.defra.gov.uk/datastore/pcm/mapbz2010.csv
+Main,Benzene,2011,Annual mean,bz2011,,http://uk-air.defra.gov.uk/datastore/pcm/mapbz2011.csv
+Main,Benzene,2012,Annual mean,bz2012,,http://uk-air.defra.gov.uk/datastore/pcm/mapbz2012.csv

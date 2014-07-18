@@ -6,6 +6,8 @@ require("ggplot2")
 require("repmis")
 require("devtools")
 require("RCurl")
+
+
 # Downloading data from Dropbox location
 
 # Whitespace trimmer
@@ -48,7 +50,7 @@ Data_from_Excel <- read.xlsx(
 # Giving up on this for now, just looking at the data from a local location
 
 Data_from_Excel <- read.xlsx(
-    "Data/Excel_Files//List of waste sites & capacity - 2012.xls",
+    "data/excel/List of waste sites & capacity - 2012.xls",
     sheetName="All Sites - 2012", stringsAsFactors=F
     )
 
@@ -177,7 +179,4 @@ DF_tmp <- data.frame(
 
 qplot(x=x,y=y, size=size, data=DF_tmp)
 p1 <- ggplot(x=x, y=y, size=size, data=DF_tmp)
-p1 + geom_point()
-?geom_point
-p1 + geom_point(aes(x=x, y=y, size=size))
 p1 + geom_point(aes(x=x, y=y, size=size, colour=size))
