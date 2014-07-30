@@ -1,4 +1,5 @@
 .Rproj.user
 .Rhistory
 .RData
-data/*
+data/robj/*
+data/raw/*
