@@ -78,12 +78,42 @@ block <- llply(
     .progress="text"
     )
 
+# Now to do the same with the local files
+
+local_files <- paste(
+    "data/fixed",
+    c(
+        "mapcom8hr2006.csv",
+        "mapbz2007.csv",
+        "mapbz2008.csv",
+        "mapbz2009.csv",
+        "mapbz2010.csv",
+        "mapbz2011.csv",
+        "mapbz2012.csv"
+    ),
+    sep="/"   
+)
+
+block_local <- llply(
+    local_files,
+    try(wrangler),
+    .progress="text"
+    )
+
+block <- c(
+    block,
+    block_local
+    )
+
 save(block, file="data/robj/block.rdata")
+
+
 
 flat_block <- ldply(
     block
     )
 
+save(flat_block, file="data/robj/flat_block.rdata")
 #####
 load("data/robj/flat_block.rdata")
 
