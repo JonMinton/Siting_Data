@@ -1,7 +1,11 @@
 # script for managing siting data
 
-# first step: download and make stls of pollution data
 
+#### To dos:
+
+# Correlation tables and corrplots of pollutants
+# First differences 
+# Principle components 
 
 rm(list=ls())
 
@@ -87,9 +91,10 @@ tidy_block  <- dcast(flat_block, formula = ukgridcode + x + y + year ~ variable,
 tidy_block[sapply(tidy_block, is.nan)] <- NA
 
 save(tidy_block, file="data/robj/tidy_block.rdata")
-write.csv(tidy_block, file="data/raw/tidy_block.csv")
-# Plot this?
+write.csv(tidy_block, file="data/raw/defra_pollution_estimates_combined.csv")
 
+#Dropbox link to above data:
+#https://www.dropbox.com/s/jyq4l2mm7bgbtjo/defra_pollution_estimates_combined.csv
 ##################################
 
 
