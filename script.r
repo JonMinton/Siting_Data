@@ -143,7 +143,3 @@ ggsave(file="figures/benzene_wrap.png")
 
 
 
-
-r2stl(as.numeric(colnames(z.expanded)), as.numeric(rownames(z.expanded)), as.numeric(z.expanded), filename="test.stl", z.expand=T)
-
-
