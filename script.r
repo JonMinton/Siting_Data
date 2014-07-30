@@ -20,7 +20,8 @@ RequiredPackages(
         "r2stl",
         "reshape2",
         "plyr",
-        "xtable"
+        "xtable",
+        "corrgram"
         )
     )
 
@@ -52,6 +53,12 @@ print.xtable(
     file="tables/cor_pearson_all_years.html", type="html"
     )
 
+cor_spearman.all_years <- cor(
+    subset(tidy_block, select=c("pm10", "pm2.5", "no2", "nox", "co" ,"so2", "ozone", "benzene")),
+    use="pairwise.complete.obs",
+    method="spearman"
+)
+
 print.xtable(
     xtable(
         cor_spearman.all_years,
@@ -62,7 +69,35 @@ print.xtable(
 
 # now a corplot
 
+png("figures/corrgram_pearson_all_years.png", width=500, height=500)
+corrgram(
+    cor_pearson.all_years,
+    upper.panel=panel.conf,
+    main="Correlations between pollutants (Pearson)",
+    col.regions=colorRampPalette(rev(c("red", "salmon", "white", "royalblue", "navy")))
+)
 
-# Correlation tables and corrplots of pollutants
+dev.off()
 
+
+png("figures/corrgram_spearman_all_years.png", width=500, height=500)
+corrgram(
+    cor_spearman.all_years,
+    upper.panel=panel.conf,
+    main="Correlations between pollutants (Spearman)",
+    col.regions=colorRampPalette(rev(c("red", "salmon", "white", "royalblue", "navy")))
+)
+
+dev.off()
+
+
+################################
+
+# Options 
+#  1) Separately for each year
+
+
+
+#########################################################
+# 2) differences
 
