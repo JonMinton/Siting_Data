@@ -3,3 +3,4 @@
 .RData
 data/robj/*
 data/raw/*
+data/shapefiles/*
