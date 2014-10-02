@@ -21,7 +21,8 @@ RequiredPackages(
         "reshape2",
         "plyr",
         "xtable",
-        "corrgram"
+        "corrgram",
+        "maptools"
         )
     )
 
@@ -32,6 +33,8 @@ RequiredPackages(
 
 
 ############################################################################################################
+tidy_block <- read.csv("Data/raw/defra_pollution_estimates_combined.csv")
+save(tidy_block, file="Data/robj/tidy_block.rdata")
 
 load("data/robj/tidy_block.rdata")
 
