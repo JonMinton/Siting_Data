@@ -101,6 +101,7 @@ dev.off()
 # separate tidy_block into different years for spatial joins
 fn <- function(x){
     this_year <- x$year[1]
+    x$X <- NULL
     write.csv(
         x,
         paste0(
