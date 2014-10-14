@@ -12,15 +12,52 @@
 # 3) find unique coordinate configurations
 # 4) 
 
+# spatial_data <- readShapePoly(
+#     "data/shapefiles/unzipped/England_oa_2011.shp"
+#     )
+
 spatial_data <- readShapePoly(
-    "data/shapefiles/unzipped/England_oa_2011.shp"
+    "E:/gis_data/shapefiles/scotland_2001_datazones/scotland_dz_2001.shp"
+)
+
+
+# This works on campus!
+
+
+
+# Looking at the gcontains function from rgeos, because of the following
+# http://stackoverflow.com/questions/21971447/check-if-point-is-in-spatial-object-which-consists-of-multiple-polygons-holes
+
+
+# I want a data frame containing the unique eastings and westings coordinates from the combined point dataframe
+
+head(tidy_block)
+
+tidy_block$X <- NULL
+
+xy <- paste(tidy_block$x, tidy_block$y, sep="_")
+grd <- subset(tidy_block, select=c("ukgridcode", "x" ,"y"))
+grd <- data.frame(grd, xy=xy)
+grd <- grd[unique(grd$xy),]
+
+# save grd only 
+
+write.csv(
+    grd, 
+    "data/point_codes.csv"
     )
 
-# change memory limit 
-# memory.limit(4095)
+grdpts <- subset(grd, select=c("x", "y"))
+grdpts <- SpatialPoints(grdpts, proj4string=CRS(proj4string(spatial_data)))
 
-# the shapefile is too large to load into the workspace
 
+## Interrogating the spatial_data object
+
+slotNames(spatial_data)
+
+tmp <- spatial_data@polygons[[1]]
+
+gContains(tmp, grdpts)
 
 
 # Will also look at using 

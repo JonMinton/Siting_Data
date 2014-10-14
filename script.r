@@ -23,7 +23,8 @@ RequiredPackages(
         "xtable",
         "corrgram",
         "maptools",
-        "rgdal"
+        "rgdal",
+        "rgeos"
         )
     )
 
