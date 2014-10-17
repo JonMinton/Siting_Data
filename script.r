@@ -24,7 +24,9 @@ RequiredPackages(
         "corrgram",
         "maptools",
         "rgdal",
-        "rgeos"
+        "rgeos",
+        "fields",
+        "gstat"
         )
     )
 
@@ -36,9 +38,9 @@ RequiredPackages(
 
 ############################################################################################################
 tidy_block <- read.csv("Data/raw/defra_pollution_estimates_combined.csv")
-save(tidy_block, file="Data/robj/tidy_block.rdata")
+#save(tidy_block, file="Data/robj/tidy_block.rdata")
 
-load("data/robj/tidy_block.rdata")
+#load("data/robj/tidy_block.rdata")
 
 # Correlations? 
 
