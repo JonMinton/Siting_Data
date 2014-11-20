@@ -42,7 +42,7 @@ gavin_linkage_fn <- function(
     pollution_data,
     dz_centroids,
     range_param=100,
-    num_samples=5000
+    num_samples=2000
     ){
 
     #@YearlyPollutionData is the Grid Pollution data year by year; A dataframe with coordinates
@@ -59,18 +59,19 @@ gavin_linkage_fn <- function(
     # Temporally keep the range parameters through the simulations
     range_temp <- rep(0,range_param)
     for (i in 1:range_param) {
+        gc()
         # draw samples
         temp_pollution_data <- pollution_data[
             sample(
                 1:nrow(pollution_data),
-                min(num_samples, num_pollutant_obs),
+                num_samples,
                 rep=FALSE
             ),
             ]
         
         # Note the distance measured using KM
         # keep the THIRD and FOURTH columns are coordinates of the yearly pollution data
-        browser()
+
         this_coords <- as.matrix(temp_pollution_data[,c("x","y")]/1000)
         this_data <- temp_pollution_data$value
         dd <- variog(
@@ -78,7 +79,6 @@ gavin_linkage_fn <- function(
             data=this_data, 
             messages=TRUE
         )
-        browser()
         
         dd_fit <- variofit(
             dd,
@@ -109,7 +109,7 @@ gavin_linkage_fn <- function(
     for (i in 1:num_dzs) {
         # First calculate the distances between each dz and all pollution data
         dist_temp <- spDistsN1(
-            pts=coords.temp,
+            pts=coords_temp,
             pt=DZ_centroid@coords[i,]/1000
         )
         # Change distance to geographical weights using parameters calibrated in Step 2
