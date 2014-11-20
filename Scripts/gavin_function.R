@@ -15,7 +15,7 @@ datazones_centroids <- SpatialPointsDataFrame(datazones_centroids,datazones_shp@
 
 ### Read in the pollution data
 all_pollution_data <- read.table("data/raw/defra_pollution_estimates_combined.csv",sep=",",header=TRUE)
-
+all_pollution_data <- subset(all_pollution_data, subset = x >=50000 & x <= 500000 & y >= 500000 & y <= 1300000)
 # melt into a format that plyr can split more easily
 all_pollution_data_long <- melt(
     all_pollution_data, # sample for now due to memory limit
