@@ -46,7 +46,7 @@ gavin_linkage_fn <- function(
     #  Finally, we can directly merge the calculated pollution data to the Scottish Data Zone
     num_pollutant_obs <- nrow(pollution_data)
     num_dzs <- nrow(dz_centroids) # the number of data zones in Scotland
-    output <- rep(NA, length=num_dzs)
+    out <- rep(NA, length=num_dzs)
          # Temporally keep the range parameters through the simulations
         range_temp <- rep(0,range_param)
         for (i in 1:range_param) {
@@ -62,8 +62,8 @@ gavin_linkage_fn <- function(
             # Note the distance measured using KM
             # keep the THIRD and FOURTH columns are coordinates of the yearly pollution data
             dd <- variog(
-                coords=temp_pollution_data[,3:4]/1000,
-                data=temp_pollution_data[,1], ## ?????!?!?!?!?
+                coords=temp_pollution_data[,c("x","y")]/1000,
+                data=temp_pollution_data[,"value"], 
                 messages=FALSE
                 )
             
@@ -74,7 +74,7 @@ gavin_linkage_fn <- function(
                 )
             
             range_temp[i] <- dd_fit$cov.pars[2]
-            #if (i %% 10 ==0) print(i)
+            if (i %% 10 ==0) print(i)
         }
         range <- as.numeric(mean(range_temp))
         # assume a 0.7 correlation threshold; can change but need to aware that smaller threshold implies longer computing time
@@ -87,7 +87,7 @@ gavin_linkage_fn <- function(
         #ind <- list()
         # weights through a Gaussian kernel as we did in Step 2
         #Gweight <- list()
-        coord_temp <- as.matrix(pollution_data[,3:4]/1000)
+        coord_temp <- as.matrix(pollution_data[,c("x", "y")]/1000)
         
         # the range parameter obtained in Step 2. We also assume it to be the
         # the threshold of distance beyond which there is no spatial correlations
@@ -108,7 +108,7 @@ gavin_linkage_fn <- function(
             w_temp <- exp(-(dist_temp[ind_temp]/range)^2)
             
             out[i] <- sum(as.numeric(pollution_data[ind_temp]*w_temp))/sum(w_temp)
-            #if(i %% 1000 == 0) print(i)
+            if(i %% 1000 == 0) print(i)
         }
         
         # This takes about 1.7 minutes
