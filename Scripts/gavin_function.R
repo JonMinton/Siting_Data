@@ -71,7 +71,7 @@ gavin_linkage_fn <- function(
                 variog(
                     coords=this_coords,
                     data=this_data, 
-                    messages=TRUE
+                    messages=FALSE
                 )
             )
             if(class(dd)!="try-error"){
@@ -111,8 +111,6 @@ gavin_linkage_fn <- function(
     # although it is not entirely true as the spatial correlation is about exp{-1} = 0.37
     
     for (i in 1:num_dzs) {
-#         print("in step 3 loop")
-#         browser()
         # First calculate the distances between each dz and all pollution data
         dist_temp <- spDistsN1(
             pts=coords_temp,
@@ -144,8 +142,9 @@ out_list <- dlply(
     all_pollution_data_long, # the input
     .(year, pollutant), # what to split by
     gavin_linkage_fn, # the function to apply
-    dz_centroids=datazones_centroids # additional unspecified arguments to function
+    dz_centroids=datazones_centroids, # additional unspecified arguments to function
     # (by default the split contents of dlply is passed to the function as the first argument)
+    .progress="text" # adds a progress bar
     )
 
 
