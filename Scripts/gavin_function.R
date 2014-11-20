@@ -61,24 +61,27 @@ gavin_linkage_fn <- function(
     for (i in 1:range_param) {
         gc()
         # draw samples
-        temp_pollution_data <- pollution_data[
-            sample(
-                1:nrow(pollution_data),
-                num_samples,
-                rep=FALSE
-            ),
-            ]
+        repeat_it <- TRUE
+        while(repeat_it){
+            samples <- sample(1:nrow(pollution_data), num_samples, replace=FALSE)
+            temp_pollution_data <- pollution_data[samples,]
+            this_coords <- as.matrix(temp_pollution_data[,c("x","y")]/1000)
+            this_data <- temp_pollution_data$value
+            dd <- try(
+                variog(
+                    coords=this_coords,
+                    data=this_data, 
+                    messages=TRUE
+                )
+            )
+            if(class(dd)!="try-error"){
+                repeat_it <- FALSE
+            }
+        }
         
         # Note the distance measured using KM
         # keep the THIRD and FOURTH columns are coordinates of the yearly pollution data
 
-        this_coords <- as.matrix(temp_pollution_data[,c("x","y")]/1000)
-        this_data <- temp_pollution_data$value
-        dd <- variog(
-            coords=this_coords,
-            data=this_data, 
-            messages=TRUE
-        )
         
         dd_fit <- variofit(
             dd,
