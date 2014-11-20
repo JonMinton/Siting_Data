@@ -20,7 +20,8 @@ all_pollution_data <- subset(all_pollution_data, subset = x >=50000 & x <= 50000
 all_pollution_data_long <- melt(
     all_pollution_data, # sample for now due to memory limit
     id.vars=c("X", "ukgridcode" ,"x", "y", "year"),
-    value.name="pollutant"
+    variable.name="pollutant"
+    
     ) 
 
 
