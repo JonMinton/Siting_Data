@@ -92,6 +92,7 @@ gavin_linkage_fn <- function(
         range_temp[i] <- dd_fit$cov.pars[2]
         if (i %% 10 ==0) print(i)
     }
+
     range <- as.numeric(mean(range_temp))
     # assume a 0.7 correlation threshold; can change but need to aware that smaller threshold implies longer computing time
     threshold_dist <- range*sqrt(-log(0.7))
@@ -103,17 +104,19 @@ gavin_linkage_fn <- function(
     #ind <- list()
     # weights through a Gaussian kernel as we did in Step 2
     #Gweight <- list()
-    coord_temp <- as.matrix(pollution_data[,c("x", "y")]/1000)
+    coords_temp <- as.matrix(pollution_data[,c("x", "y")]/1000)
     
     # the range parameter obtained in Step 2. We also assume it to be the
     # the threshold of distance beyond which there is no spatial correlations
     # although it is not entirely true as the spatial correlation is about exp{-1} = 0.37
     
     for (i in 1:num_dzs) {
+#         print("in step 3 loop")
+#         browser()
         # First calculate the distances between each dz and all pollution data
         dist_temp <- spDistsN1(
             pts=coords_temp,
-            pt=DZ_centroid@coords[i,]/1000
+            pt=dz_centroids@coords[i,]/1000
         )
         # Change distance to geographical weights using parameters calibrated in Step 2
         ind_temp <- which(
@@ -123,7 +126,7 @@ gavin_linkage_fn <- function(
         # Gaussian kernel
         w_temp <- exp(-(dist_temp[ind_temp]/range)^2)
         
-        out[i] <- sum(as.numeric(pollution_data[ind_temp]*w_temp))/sum(w_temp)
+        out[i] <- sum(as.numeric(pollution_data[ind_temp,"value"]*w_temp))/sum(w_temp)
         if(i %% 1000 == 0) print(i)
     }
         
