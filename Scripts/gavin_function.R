@@ -126,7 +126,7 @@ gavin_linkage_fn <- function(
         w_temp <- exp(-(dist_temp[ind_temp]/range)^2)
         
         out[i] <- sum(as.numeric(pollution_data[ind_temp,"value"]*w_temp))/sum(w_temp)
-        if(i %% 1000 == 0) print(i)
+#        if(i %% 1000 == 0) print(i)
     }
         
         # This takes about 1.7 minutes
