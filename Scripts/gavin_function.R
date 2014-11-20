@@ -72,7 +72,8 @@ gavin_linkage_fn <- function(
                     coords=this_coords,
                     data=this_data, 
                     messages=FALSE
-                )
+                ),
+                silent=T
             )
             if(class(dd)!="try-error"){
                 repeat_it <- FALSE
@@ -90,7 +91,7 @@ gavin_linkage_fn <- function(
         )
         
         range_temp[i] <- dd_fit$cov.pars[2]
-        if (i %% 10 ==0) print(i)
+#        if (i %% 10 ==0) print(i)
     }
 
     range <- as.numeric(mean(range_temp))
