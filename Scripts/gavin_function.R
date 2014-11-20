@@ -1,3 +1,7 @@
+rm(list=ls())
+gc()
+
+
 require(maptools)
 require(rgeos)
 require(rgdal)
@@ -26,6 +30,8 @@ all_pollution_data_long <- melt(
 
 na_values <- is.na(all_pollution_data_long$value)
 all_pollution_data_long <- all_pollution_data_long[!na_values,]
+rm(all_pollution_data)
+gc()
 
 str(datazones_centroids)
 
@@ -48,7 +54,7 @@ gavin_linkage_fn <- function(
     #  Finally, we can directly merge the calculated pollution data to the Scottish Data Zone
     
     num_pollutant_obs <- nrow(pollution_data)
-    num_dzs <- nrow(dz_centroids) # the number of data zones in Scotland
+    num_dzs <- dim(dz_centroids)[1] # the number of data zones in Scotland
     out <- rep(NA, length=num_dzs)
     # Temporally keep the range parameters through the simulations
     range_temp <- rep(0,range_param)
@@ -64,11 +70,15 @@ gavin_linkage_fn <- function(
         
         # Note the distance measured using KM
         # keep the THIRD and FOURTH columns are coordinates of the yearly pollution data
+        browser()
+        this_coords <- as.matrix(temp_pollution_data[,c("x","y")]/1000)
+        this_data <- temp_pollution_data$value
         dd <- variog(
-            coords=temp_pollution_data[,c("x","y")]/1000,
-            data=temp_pollution_data[,"value"], 
-            messages=FALSE
+            coords=this_coords,
+            data=this_data, 
+            messages=TRUE
         )
+        browser()
         
         dd_fit <- variofit(
             dd,
@@ -120,7 +130,7 @@ gavin_linkage_fn <- function(
     return(out)
 }
 
-debug(gavin_linkage_fn)
+#debug(gavin_linkage_fn)
 
 # input: dataframe
 # output: list
