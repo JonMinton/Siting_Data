@@ -4,3 +4,4 @@
 data/robj/*
 data/raw/*
 data/shapefiles/*
+interpolation_matrices/*

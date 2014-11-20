@@ -21,7 +21,8 @@ RequiredPackages(
         "rgdal",
         "rgeos",
         "fields",
-        "gstat"
+        "gstat", 
+        "akima"
         )
     )
 
