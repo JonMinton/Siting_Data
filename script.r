@@ -50,7 +50,6 @@ datazones_id_link <- data.frame(
     zone_name=datazones_shp[["zonecode"]]
     )
 
-rm(datazones_shp, datazones_ids)
 
 load("G:/dropbox/Dropbox/Data/Pollution/gavins_three_step_approach/DATA_LINKAGE.RData")
 
@@ -86,4 +85,54 @@ pollution_tidy <- out2
 rm(out2)
 
 write.csv(pollution_tidy, file="Data/generated/pollution_by_datazone.csv")
+
+################################################################################
+### Now to visualise
+#####################################################################################################
+
+require(reshape2)
+require(plyr)
+require(stringr)
+require(ggplot2)
+require(maptools)
+require(grid)
+
+
+datazones_shp@data$id <- rownames(datazones_shp@data)
+id_name <- subset(datazones_shp@data, select=c("id", "zonecode"))
+
+datazones_map <- fortify(datazones_shp)
+datazones_map <- join(datazones_map, id_name)
+datazones_map <- rename(datazones_map, replace=c("zonecode"="datazone"))
+
+
+theme_clean <- function(base_size=12){
+    theme_grey(base_size) %+replace%
+        theme(
+            axis.title=element_blank(),
+            axis.text=element_blank(),
+            panel.background=element_blank(),
+            panel.grid=element_blank(),
+            axis.ticks.length=unit(0, "cm"),
+            axis.ticks.margin=unit(0, "cm"),
+            panel.margin=unit(0, "lines"),
+            plot.margin=unit(c(0,0,0,0), "lines"),
+            complete=TRUE
+        )
+}
+
+pollutants_joined <- join(datazones_map, pollution_tidy, by="datazone", type="full")
+pollutants_joined <- arrange(pollutants_joined, year, group, order)
+
+
+g1 <- ggplot(
+    subset(
+        pollutants_joined,
+        year==2001
+        )
+)
+g2 <- g1 + geom_polygon(aes(x=long, y=lat, fill=no2, group=id)) + coord_equal()
+g3 <- g2 + theme_clean() + scale_fill_gradient(low="white", high="red")      
+print(g3)
+
 
