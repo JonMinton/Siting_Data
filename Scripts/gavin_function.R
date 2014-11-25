@@ -188,15 +188,67 @@ pollutants_joined <- join(datazones_map, pollution_tidy, by="datazone", type="fu
 pollutants_joined <- arrange(pollutants_joined, year, group, order)
 
 
-g1 <- ggplot(
-    subset(
-        pollutants_joined,
-        year==2001
-    )
-)
-g2 <- g1 + geom_polygon(aes(x=long, y=lat, fill=no2, group=id)) + coord_equal()
-g3 <- g2 + theme_clean() + scale_fill_gradient(low="white", high="red")      
-print(g3)
+fn <-function(x){
+    this_year <- x$year[1]
+    
+    g1 <- ggplot(data=x)
+    g2 <- g1 + geom_path(aes(x=long, y=lat, group=id), colour="grey") + coord_equal()
+    g3 <- g2 + theme_clean() + scale_fill_gradient(low="white", high="red") 
+    
+ 
+    try(g_pm10 <- g3 + geom_polygon(aes(x=long, y=lat, fill=pm10, group=id)) + coord_equal())
+    try(
+        ggsave(g_pm10,
+        filename=paste0("Figures/pollution_by_dz/pm10_", this_year, ".tiff"),
+        width=8, height=10, units="cm"
+    ))
+    
+    try(g_pm2.5 <- g3 + geom_polygon(aes(x=long, y=lat, fill=pm2.5, group=id)) + coord_equal())
+    try(        
+        ggsave(g_pm2.5,
+        filename=paste0("Figures/pollution_by_dz/pm2_5_", this_year, ".tiff"),
+        width=8, height=10, units="cm"
+    ))
+    
+    try(g_no2 <- g3 + geom_polygon(aes(x=long, y=lat, fill=no2, group=id)) + coord_equal())
+    try(    
+        ggsave(g_no2,
+        filename=paste0("Figures/pollution_by_dz/no2_", this_year, ".tiff"),
+        width=8, height=10, units="cm"
+    ))
+
+    try(g_nox <- g3 + geom_polygon(aes(x=long, y=lat, fill=nox, group=id)) + coord_equal())
+    try(
+        ggsave(g_nox,
+        filename=paste0("Figures/pollution_by_dz/nox_", this_year, ".tiff"),
+        width=8, height=10, units="cm"
+    ))
+    
+    try(g_co <- g3 + geom_polygon(aes(x=long, y=lat, fill=co, group=id)) + coord_equal())
+    try(        
+        ggsave(g_co,
+        filename=paste0("Figures/pollution_by_dz/co_", this_year, ".tiff"),
+        width=8, height=10, units="cm"
+    ))
+    
+    try(g_ozone <- g3 + geom_polygon(aes(x=long, y=lat, fill=ozone, group=id)) + coord_equal())
+    try(
+        ggsave(g_ozone,
+        filename=paste0("Figures/pollution_by_dz/ozone_", this_year, ".tiff"),
+        width=8, height=10, units="cm"
+    ))
+    
+    try(g_benzene <- g3 + geom_polygon(aes(x=long, y=lat, fill=benzene, group=id)) + coord_equal())
+    try(        
+        ggsave(g_benzene,
+        filename=paste0("Figures/pollution_by_dz/benzene_", this_year, ".tiff"),
+        width=8, height=10, units="cm"
+    ))
+    
+    NULL    
+}
+
+d_ply(pollutants_joined, .(year), fn)
 
 
 
