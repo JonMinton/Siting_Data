@@ -123,8 +123,12 @@ fn <- function(
 l_ply(
     cuts,
     fn,
-    data=data_ss
+    data=data_ss,
+    .progress="text"
     )
+
+# start at 1417 on Mon 27/10/2014
+
 
 # #install.packages("akima")
 # require(akima)
