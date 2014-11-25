@@ -110,6 +110,96 @@ out_list <- dlply(
 
 
 
+datazones_id_link <- data.frame(
+    zone_id=datazones_ids,
+    zone_name=datazones_shp[["zonecode"]]
+)
+
+
+fn <- function(x){
+    x <- data.frame(
+        datazone=datazones_id_link$zone_name,
+        value=x
+    )
+    return(x)
+}
+out_dataframe <- ldply(out_list, fn)
+
+
+
+out2 <- recast(
+    out_dataframe,
+    year + datazone ~ pollutant,
+    id.var=c("year", "datazone", "pollutant"),
+    measure.var="value",
+    fun=mean
+)
+
+out2[,-c(1,2)] <- apply(
+    out2[,-c(1,2)], 2, 
+    function(x){
+        out <- x
+        out[is.nan(out)] <- NA
+        out
+    }
+)
+
+pollution_tidy <- out2
+rm(out2)
+
+write.csv(pollution_tidy, file="Data/generated/pollution_by_datazone.csv")
+
+################################################################################
+### Now to visualise
+#####################################################################################################
+
+require(reshape2)
+require(plyr)
+require(stringr)
+require(ggplot2)
+require(maptools)
+require(grid)
+
+
+datazones_shp@data$id <- rownames(datazones_shp@data)
+id_name <- subset(datazones_shp@data, select=c("id", "zonecode"))
+
+datazones_map <- fortify(datazones_shp)
+datazones_map <- join(datazones_map, id_name)
+datazones_map <- rename(datazones_map, replace=c("zonecode"="datazone"))
+
+
+theme_clean <- function(base_size=12){
+    theme_grey(base_size) %+replace%
+        theme(
+            axis.title=element_blank(),
+            axis.text=element_blank(),
+            panel.background=element_blank(),
+            panel.grid=element_blank(),
+            axis.ticks.length=unit(0, "cm"),
+            axis.ticks.margin=unit(0, "cm"),
+            panel.margin=unit(0, "lines"),
+            plot.margin=unit(c(0,0,0,0), "lines"),
+            complete=TRUE
+        )
+}
+
+pollutants_joined <- join(datazones_map, pollution_tidy, by="datazone", type="full")
+pollutants_joined <- arrange(pollutants_joined, year, group, order)
+
+
+g1 <- ggplot(
+    subset(
+        pollutants_joined,
+        year==2001
+    )
+)
+g2 <- g1 + geom_polygon(aes(x=long, y=lat, fill=no2, group=id)) + coord_equal()
+g3 <- g2 + theme_clean() + scale_fill_gradient(low="white", high="red")      
+print(g3)
+
+
+
 # # try PM2.5 in 2012 
 # resPM25 <- gavin_linkage_fn(subset(all_pollution_data_long,year==2012 & pollutant=='pm2.5'),dz_centroids=datazones_centroids,nearest_P=0.001)
 # resPM25_1 <- gavin_linkage_fn(subset(all_pollution_data_long,year==2012 & pollutant=='pm2.5'),dz_centroids=datazones_centroids,nearest_P=0.0005)
