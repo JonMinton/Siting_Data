@@ -248,7 +248,7 @@ fn <-function(x){
     NULL    
 }
 
-d_ply(pollutants_joined, .(year), fn)
+d_ply(pollutants_joined, .(year), fn, .progress="text")
 
 
 
